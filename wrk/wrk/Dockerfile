@@ -1,0 +1,32 @@
+FROM ubuntu:20.04
+
+WORKDIR /app/
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=America/Los_Angeles
+
+RUN apt-get update && \
+    apt-get install --yes \
+    build-essential \
+    cmake \
+    git \
+    libssl-dev \
+    tcl \
+    tcl-tclreadline \
+    vim-nox \
+    wget \
+    curl \
+    zlib1g-dev \
+    ca-certificates curl apt-transport-https lsb-release gnupg
+
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
+RUN git clone --depth=1 https://github.com/giltene/wrk2.git && cd wrk2 && make
+
+COPY benchmark.sh benchmark.sh
+
+ENV PATH=$PATH:/app/wrk2
+
+# CMD ["bash"]
+
+CMD ["bash", "benchmark.sh"]
