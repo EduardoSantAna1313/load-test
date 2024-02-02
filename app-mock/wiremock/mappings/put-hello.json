@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "/hello/1",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.message"
+      }
+    ]
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "put-hello.json"
+  }
+}

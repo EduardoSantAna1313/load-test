@@ -13,7 +13,7 @@ docker build -t app-mock:v1 .
 printf "\nRunning the mock ###\n"
 docker run -d -it --rm -p 8080:8080 --name app-mock app-mock:v1
 
-sleep 2
+sleep 5
 
 printf "\n### Testing the mock server ###\n"
 curl localhost:8080/hello

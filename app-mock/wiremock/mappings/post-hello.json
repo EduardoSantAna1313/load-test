@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/hello",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.message"
+      }
+    ]
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "post-hello.json"
+  }
+}
