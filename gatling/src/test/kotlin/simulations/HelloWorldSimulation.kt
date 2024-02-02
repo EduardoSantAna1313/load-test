@@ -29,7 +29,7 @@ class HelloWorldSimulation (
         )
         // Print the response body
         .exec{ session ->
-            println(session.get("responseBody"))
+        //    println(session.get("responseBody"))
             session
         }
 
@@ -46,9 +46,7 @@ class HelloWorldSimulation (
                 .check(status().`is`(201)))
 
         // DELETE/{id}
-        .exec(http("DELETE/{id}").delete{s -> "/hello/${s.getString("ID")}"}.check(status().`is`(204)))
-
-    ,
+        .exec(http("DELETE/{id}").delete{s -> "/hello/${s.getString("ID")}"}.check(status().`is`(204))),
 
     helloWorldScenario: ScenarioBuilder = scenario("Hello World Scenario").exec(execGetHello)
 

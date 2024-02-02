@@ -57,6 +57,12 @@
                 <configuration>
                     <packageId>simulations</packageId>
                     <resultsFolder>results</resultsFolder>
+                    <includes>
+                        <include>simulations**</include>
+                    </includes>
+                    <excludes>
+                        <exclude>examples.**</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
         </plugins>

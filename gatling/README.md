@@ -16,7 +16,10 @@ Verifique os itens abaixo antes de iniciar o projeto:
 Siga os passos abaixo para executar os testes em ambiente local:
 
 1. Rode o app-mock executando o script: 
-    `app-mock/run.sh`:
+    ```sh
+    app-mock/run.sh
+   ```
+
 1. Rode os testes com gatlin usando o plugin maven:
     ```sh
    mvn gatling:test
