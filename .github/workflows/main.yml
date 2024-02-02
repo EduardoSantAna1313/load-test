@@ -33,7 +33,7 @@ jobs:
 
       - name: Run gatling test
         id: gatling-test
-        working-directory: gatlinh
+        working-directory: gatling
         run: |
           mvn --file pom.xml gatling:test
 
