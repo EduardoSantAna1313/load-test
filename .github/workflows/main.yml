@@ -1,12 +1,22 @@
 name: 'Main'
 
 on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "Profile"
+        required: true
+        default: "BASIC"
+        type: string
   push:
     branches:
       - 'main'
 
 permissions:
   contents: read    # This is required for actions/checkout
+
+env:
+  PROFILE: ${{ github.events.input.profile }}
 
 jobs:
   # Gatling test
