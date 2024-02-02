@@ -7,7 +7,11 @@ on:
         description: "Profile"
         required: true
         default: "BASIC"
-        type: string
+        type: choice
+        options:
+          - "BASIC"
+          - "STRESS"
+          - "SINGLE"
   push:
     branches:
       - 'main'
