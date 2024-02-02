@@ -20,7 +20,7 @@ permissions:
   contents: read    # This is required for actions/checkout
 
 env:
-  PROFILE: ${{ github.event.input.profile }}
+  PROFILE: ${{ github.event.inputs.profile }}
 
 jobs:
   # Gatling test
